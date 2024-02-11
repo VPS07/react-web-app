@@ -38,3 +38,12 @@ npm start
 ```
 
 The application should now be running on `http://localhost:5173`.
+
+## Features
+
+- Utilized a concise and efficient routing approach using createBrowserRouter, reducing boilerplate code
+- Employed standard practices in coding, ensuring maintainability and scalability.
+- Used Material user-friendly interface.
+- Focused on simplicity and clarity in design, enhancing the user experience.
+- Applied proper error handling for input fields.
+- Usec etherjs to verify the user's wallet address.

@@ -8,6 +8,8 @@ const DataTable = () => {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
+
+        //fetach save data from firebase database
         const fetchTransactions = async () => {
             const transactionsRef = collection(db, 'transactions');
             const transactionsQuery = query(transactionsRef);
@@ -24,6 +26,7 @@ const DataTable = () => {
         fetchTransactions();
     }, []);
 
+    // Data Grid columns name and width
     const columns = [
         { field: 'id', headerName: 'ID', width: 150 },
         { field: 'walletAddress', headerName: 'Wallet Address', width: 400 },

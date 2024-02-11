@@ -35,7 +35,6 @@ const TransactionForm = () => {
       setAmount('');
       setErrors({});
 
-      // Handle successful submission (e.g., display a success message)
     } catch (error) {
       // Handle Firestore errors
       console.error('Firestore error:', error);

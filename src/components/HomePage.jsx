@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Typography, Button, Stack } from '@mui/material';
+import { Box, Typography, Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
