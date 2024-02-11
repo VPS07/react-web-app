@@ -1,8 +1,40 @@
-# React + Vite
+# Frontend React.js Developer Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technologies Used
 
-Currently, two official plugins are available:
+- Vite
+- React.js
+- Google Firestore
+- MUI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation and Setup
+
+To run this project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone <repository-url>
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd <project-directory>
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Create a Firebase project and set up Firestore. Replace the Firebase configuration in the project with your own credentials. Follow docs here - https://firebase.google.com/docs/web/setup
+
+5. Run the application:
+
+```bash
+npm start
+```
+
+The application should now be running on `http://localhost:5173`.

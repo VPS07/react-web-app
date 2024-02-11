@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import { addDoc, collection } from "firebase/firestore";
 import {
   TextField,
   Button,
   FormControl,
-  InputLabel,
-  FormHelperText,
 } from '@mui/material';
 import { ethers } from 'ethers';
+import { db } from "../utils/firebase-config";
 
 const TransactionForm = () => {
   const [walletAddress, setWalletAddress] = useState('');
@@ -25,10 +25,10 @@ const TransactionForm = () => {
 
     try {
       // Add data to Firestore
-    //   await db.collection('transactions').add({
-    //     walletAddress,
-    //     amount,
-    //   });
+      await addDoc(collection(db, 'transactions'), {
+        walletAddress,
+        amount,
+      });
 
       // Clear form fields and errors
       setWalletAddress('');
@@ -75,9 +75,14 @@ const TransactionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormControl fullWidth error={errors.walletAddress}>
-        <InputLabel htmlFor="wallet-address">Wallet Address</InputLabel>
+    <form
+      onSubmit={handleSubmit}
+    >
+      <FormControl
+        fullWidth
+        error={errors.walletAddress}
+        sx={{ marginBottom: 4 }}
+      >
         <TextField
           id="wallet-address"
           label="Wallet Address"
@@ -87,8 +92,7 @@ const TransactionForm = () => {
           helperText={errors.walletAddress} // Use helperText for error messages
         />
       </FormControl>
-      <FormControl fullWidth error={errors.amount}>
-        <InputLabel htmlFor="amount">Amount</InputLabel>
+      <FormControl fullWidth error={errors.amount} sx={{ marginBottom: 4 }}>
         <TextField
           id="amount"
           label="Amount"
@@ -99,7 +103,7 @@ const TransactionForm = () => {
           helperText={errors.amount}
         />
       </FormControl>
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary" sx={{ outline: "none !important" }}>
         Submit Transaction
       </Button>
     </form>
